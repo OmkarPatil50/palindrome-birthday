@@ -23,9 +23,19 @@ function clickHandler() {
             output.innerText = "Yay! Your Birthday is a Palindrome"
         }
         else {
-           getNextPalindromeDate(datesWithZero)
-            
-            // output.innerText ="Oops! Your birthday is not Palindrome. You missed by "+ counter + " days" + nextDateCalculated;
+          var[counterNext, palindromeDate] = getNextPalindromeDate(datesWithZero)
+          var [counterRev, palindromeDateRev] = getReversePalindromeDate(datesWithZero)
+ 
+          if(counterNext< counterRev){
+            output.innerText ="Oops! Your birthday is not Palindrome. You missed by "+ counterNext + " days. Recent Palindrome date to your Birthday is " + palindromeDate.date +"-" +palindromeDate.month+ "-" + palindromeDate.year +". It is "+ counterNext + " days ahead."
+          }
+          else {
+            output.innerText ="Oops! Your birthday is not Palindrome. You missed by "+ counterRev + " days. Recent Palindrome date to your Birthday is " + palindromeDateRev.date +"-" +palindromeDateRev.month+ "-" + palindromeDateRev.year + ". It is "+ counterRev + " days ago."
+          }
+
+
+
+
         }
 
 
@@ -152,20 +162,95 @@ function nextDate(dateFormat) {
 function getNextPalindromeDate(datesWithZero) {
     var counter = 0;
     var nextDateCalculated = nextDate(datesWithZero);
-
-    while (1) {
+ 
+    while(1){
         counter++;
         var nextDateWithZero = dateZeroAdder(nextDateCalculated);
         var allNextDateFormats = allDateFormats(nextDateWithZero);
         var allReversedDates = reverseString(allNextDateFormats);
        var palindromeChecker=  isPalindrome(allReversedDates, allNextDateFormats)
-        if (palindromeChecker === true) {   
-            console.log(counter)
+      
+        if(palindromeChecker == true){
             break;
-        } 
-        nextDateCalculated = nextDate(datesWithZero);
+        }
+        nextDateCalculated = nextDate(nextDateWithZero);
 
     }
+return [counter, nextDateWithZero]
+}
+
+function getReversePalindromeDate(datesWithZero){
+    var counter = 0;
+    var reverseDateCalculated = getReverseDate(datesWithZero);
+ 
+    while(1){
+        counter++;
+        var nextDateWithZero = dateZeroAdder(reverseDateCalculated);
+        var allNextDateFormats = allDateFormats(nextDateWithZero);
+        var allReversedDates = reverseString(allNextDateFormats);
+       var palindromeChecker=  isPalindrome(allReversedDates, allNextDateFormats)
+      
+        if(palindromeChecker == true){
+            break;
+        }
+        reverseDateCalculated = getReverseDate(nextDateWithZero);
+
+    }
+return [counter, nextDateWithZero]
+
+}
+
+function getReverseDate(dateFormat){
+
+    
+    var dateGiven = Number(dateFormat.date);
+    var monthGiven = Number(dateFormat.month);
+    var yearGiven = Number(dateFormat.year);
+    dateGiven = dateGiven - 1;
+
+
+    var daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+
+
+    if (dateGiven < 1 ) {
+
+        leapYearCheck(dateFormat)
+        if (leapYearCheckValue) {
+            if (monthGiven === 3) {
+                if (dateGiven< 1) {
+                    dateGiven = 29 ;
+                    monthGiven = monthGiven - 1;
+                }
+                else {
+                    dateGiven = dateGiven;
+                }
+            }
+        } else {
+            dateGiven = daysInMonth[monthGiven-2];
+            monthGiven = monthGiven - 1;
+
+            if (monthGiven <1 ) {
+                monthGiven = 12;
+                dateFormat.year = dateFormat.year- 1;
+            } else {
+                monthGiven = monthGiven;
+            }
+
+        }
+
+    }
+    else {
+        dateGiven = dateGiven;
+    }
+    var reverseDateGiven = {
+        date: dateGiven,
+        month: monthGiven,
+        year: yearGiven
+    }
+
+
+    return reverseDateGiven
+    
 
 }
 
