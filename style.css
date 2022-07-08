@@ -10,12 +10,11 @@
 
 
 body{
-   
-    font-family: 'Happy Monkey', cursive;
-  width: auto;
-  block-size: fit-content;
-    max-width: 800px;
-margin: auto;
+   margin: auto;
+  font-family: 'Montserrat', sans-serif;;
+  width: 60%;
+  
+
 }
 
 .container{
@@ -34,11 +33,19 @@ padding: 1rem;
     background: black;
     text-align: center;
     color: white;
-    padding: 2rem 4.1rem 2rem 4.1rem;
+    padding: 2rem 4rem 2rem 4rem;
 font-size: xx-large;
 font-weight: bolder;   
-text-align: center; 
+
 }
+
+
+hr{
+ margin: 2rem;
+}
+
+
+
 
 .explaination{
     color: var(--secondary-color);
@@ -54,8 +61,8 @@ span{
 }
 
 #birth-date{
-    display: block;
-    margin: auto;
+    display: inline;
+    margin: 0% 10% 0% 20%;
   padding:1rem 2rem;
   font-size: larger;
   font-weight: bold;
@@ -67,17 +74,14 @@ border-radius: 2rem;
 cursor: pointer;
 }
 
-.gif{
-    display: block;
-    margin: auto;
-    padding-top: 4rem;
-    max-width: 100px;
+.header-items{
+  text-align: center;
 }
 
 
 
-
 .image {
+  margin: auto;
     display: inline;
     width:100px;
     height: 100px;
@@ -88,9 +92,8 @@ cursor: pointer;
 
 
 .btn-check{
-    display: block;
-    margin: auto ;
-    padding: 1rem 2rem;
+    display: inline;
+    padding: 0.5rem 1rem;
     border: var(--tertiary-color)solid;
     border-radius: 1rem;
     background-color: var(--tertiary-color);
@@ -131,11 +134,7 @@ cursor: pointer;
 .cake-container {
     
     display: block;
-    margin-top: 4rem;
-    margin-left:23.5rem;
-  justify-content:center;
-  align-items: center;
-  height: auto;
+    margin:2% 0% 0% 35%;
   padding-bottom: 2rem;
    
   }
@@ -143,7 +142,8 @@ cursor: pointer;
 
 .bdayCake {
     position: relative;
-    left:-100px;
+
+    align-self: center;
     top:100px;
   }
   

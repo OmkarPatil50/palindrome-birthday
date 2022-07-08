@@ -36,10 +36,10 @@ function clickHandler() {
           var [counterRev, palindromeDateRev] = getReversePalindromeDate(datesWithZero)
  
           if(counterNext< counterRev){
-            output.innerText ="Oops! Your birthday is not Palindrome. You missed by "+ counterNext + " days. Recent Palindrome date to your Birthday is " + palindromeDate.date +"-" +palindromeDate.month+ "-" + palindromeDate.year +". It is "+ counterNext + " days ahead."
+            output.innerText ="Oops! Your birthday is not Palindrome. Recent Palindrome date to your Birthday is " + palindromeDate.date +"-" +palindromeDate.month+ "-" + palindromeDate.year +". It is "+ counterNext + " days ahead."
           }
           else {
-            output.innerText ="Oops! Your birthday is not Palindrome. You missed by "+ counterRev + " days. Recent Palindrome date to your Birthday is " + palindromeDateRev.date +"-" +palindromeDateRev.month+ "-" + palindromeDateRev.year + ". It is "+ counterRev + " days ago."
+            output.innerText ="Oops! Your birthday is not Palindrome. Recent Palindrome date to your Birthday is " + palindromeDateRev.date +"-" +palindromeDateRev.month+ "-" + palindromeDateRev.year + ". It is "+ counterRev + " days ago."
           }
 
 
