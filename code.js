@@ -1,12 +1,21 @@
-var btnCheck = document.querySelector(".btn-check")
+var btnCheck = document.querySelector("#btn-checker")
 var dateOfBirth = document.querySelector("#birth-date")
 var output = document.querySelector(".output-message")
-
+var loadingGif = document.getElementById("#loader")
 
 let count = 0;
 
+
+
+function delayHandler(){
+   
+output.innerText = "Loading..."
+
+setTimeout(clickHandler, 2000)
+}
+
 function clickHandler() {
-    var birthDate = dateOfBirth.value;
+    var birthDate = dateOfBirth.value;  
 
     if (birthDate) {
         birthDate = birthDate.split('-')
@@ -281,7 +290,7 @@ function leapYearCheck(dateFormat) {
 
 
 
-btnCheck.addEventListener("click", clickHandler)
+btnCheck.addEventListener("click", delayHandler)
 
 
 
