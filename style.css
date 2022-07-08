@@ -107,8 +107,6 @@ cursor: pointer;
 
 
 .btn-check-reload{
-  margin-left: 0;
-  display: block;
     padding:0.5rem 1rem;
     border: var(--tertiary-color)solid;
     border-radius: 1rem;
@@ -117,18 +115,20 @@ cursor: pointer;
     font-weight: bolder;
     font-size: large;
     cursor: pointer;
+    display: inline;
+    margin-left: 90%;
 
 }
 
 
 .output-message{
-    
+    display: block;
     color:#e90c59;
     font-size: x-large;
-       text-align: center;
+       text-align:center;
        max-width: 600px;
        margin: auto;
-    padding: 4rem 0rem 0rem 1rem;
+    
 
 
 }
@@ -136,9 +136,9 @@ cursor: pointer;
 
 .cake-container {
     
-    display: block;
-    margin:0% 41.5%;
-            
+    display: inline;
+    margin:auto;
+        max-width: 100px;    
   padding-bottom: 2rem;
    
   }
