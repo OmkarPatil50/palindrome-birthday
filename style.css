@@ -12,7 +12,8 @@
 body{
    
     font-family: 'Happy Monkey', cursive;
-  width: fit-content;
+  width: auto;
+  block-size: fit-content;
     max-width: 800px;
 margin: auto;
 }
